@@ -5,13 +5,20 @@ import { ChatEngine} from 'react-chat-engine';
 import { auth } from '../firebase';
 
 const Chats = () => {
+    const history = useHistory()
+
+    const handleLogout = async () => {
+        await auth.signOut();
+        history.push('/')
+    }
+
     return (
         <div className="chats-page">
             <div className="nav-bar">
                 <div className="logo-tab">
                     Unichat
                 </div>
-                <div className="logout-tab">
+                <div onClick={handleLogout} className="logout-tab">
                     Logout
                 </div>
             </div>
