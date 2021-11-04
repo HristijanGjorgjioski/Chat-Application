@@ -1,5 +1,8 @@
 import React from 'react'
-import { GoolgeOutlined, FacebookOutlined } from '@ant-design/icons';
+import { GoogleOutlined, FacebookOutlined } from '@ant-design/icons';
+import "firebase/app";
+
+import { auth } from '../firebase';
 
 const Login = () => {
     return (
@@ -9,7 +12,7 @@ const Login = () => {
                 <div
                     className="login-button google"
                 >
-                    <GoolgeOutlined /> Sign In with Google
+                    <GoogleOutlined /> Sign In with Google
                 </div>
                 <br /> <br />
                 <div
