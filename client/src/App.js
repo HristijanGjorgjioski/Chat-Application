@@ -2,6 +2,8 @@ import React from 'react'
 import { StreamChat } from 'stream-chat'
 import { Chat } from 'stream-chat-react'
 import Cookies from 'universal-cookie'
+import ChannelContainer from './Components/ChannelContainer';
+import ChannelListContainer from './Components/ChannelListContainer';
 
 const apiKey = 'szb7j6e4kv2h';
 
@@ -11,7 +13,7 @@ const App = () => {
   return (
     <div className="app__wrapper">
       <Chat client={client} theme="team dark">
-        <ChannelListContainer 
+        <ChannelListContainer
         
         />
 
