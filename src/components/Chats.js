@@ -16,6 +16,12 @@ const Chats = () => {
         history.push('/')
     }
 
+    const getFile = async (url) => {
+        const response = await fetch(url);
+        const data = await response.blob();
+        return new File([data], "userPhoto.jpg", { type: 'image/jpg '});
+    }
+
     useEffect(() => {
         if(!user) {
             history.push('/');
@@ -28,11 +34,15 @@ const Chats = () => {
                 "user-name": user.email,
                 "user-secret": user.uid,
             }
-        })
-        .then(() => {
+        }).then(() => {
             setLoading(false)
+        }).catch((err) => {
+            let fromdata = new FormData();
+            fromdata.append('email', user.email);
+            fromdata.append('username', user.displayName);
+            fromdata.append('secret', user.uid);
         })
-    })
+    }, [user, history])
 
     return (
         <div className="chats-page">
