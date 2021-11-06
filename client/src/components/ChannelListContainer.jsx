@@ -3,10 +3,15 @@ import { ChannelList, useChatContext } from 'stream-chat-react'
 import Cookies from 'universal-cookie'
 
 // import { ChannelSearch, TeamChannelList, TeamChannelPreview } from './'
+import HospitalIcon from '../assetes/hospital.png'
 
 const SideBar = () => (
-    <div>
-        
+    <div className="channel-list__sidebar">
+        <div className="channel-list__sidebar__icon1">
+            <div className="icon1__inner">
+                <img src={HospitalIcon} alt="Hospital" width="30" />
+            </div>
+        </div>
     </div>
 )
 
