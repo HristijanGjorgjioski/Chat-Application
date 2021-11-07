@@ -51,7 +51,52 @@ const Auth = () => {
                                 />
                             </div>
                         )}
+                        {isSignup && (
+                            <div className="auth__form-container_fields-content_input">
+                                <label htmlFor="avatarURL">Avatar URL</label>
+                                <input 
+                                    name="avatarURL"
+                                    type="text"
+                                    placeholder="Avatar URL"
+                                    onChange={handleChange}
+                                    required
+                                />
+                            </div>
+                        )}
+                        <div className="auth__form-container_fields-content_input">
+                            <label htmlFor="password">Password</label>
+                            <input 
+                                name="password"
+                                type="password"
+                                placeholder="Password"
+                                onChange={handleChange}
+                                required
+                            />
+                        </div>
+                        {isSignup && (
+                            <div className="auth__form-container_fields-content_input">
+                                <label htmlFor="confirmPassword">Confirm Password</label>
+                                <input
+                                    name="confirmPassword"
+                                    type="password"
+                                    placeholder="Confirm Password"
+                                    onChange={handleChange}
+                                    required
+                                />
+                            </div>
+                        )}
                     </form>
+                    <div className="auth__form-container_fileds-account">
+                        <p>
+                            {isSignup
+                                ? 'Already have an account?'
+                                : 'Do not have an account?'
+                            }
+                            <span onClick={switchMode}>
+                                {}
+                            </span>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
