@@ -4,7 +4,7 @@ import axios from 'axios'
 
 import signinImage from '../assets/signup.jpg'
 
-const cookies = new Cookies;
+const cookies = new Cookies();
 
 const initialState = {
     fullName: '',
@@ -44,6 +44,8 @@ const Auth = () => {
             cookies.set('avatarURL', avatarURL);
             cookies.set('hashedPassword', hashedPassword);
         }
+
+        window.location.reload();
     }
 
     const switchMode = () => {
