@@ -31,8 +31,11 @@ const ChannelContainer = ({ isCreating, setIsCreating, isEditing, setIsEditing, 
 
     return (
         <div className="channel__container">
-            <Channel>
-                
+            <Channel
+                EmptyStateIndicator={EmptyState}
+                Message={(messageProps, i) => <TeamMessages key={i} {...messageProps} />}
+            >
+                <ChannelInner setIsEditing={setIsEditing} />
             </Channel>
         </div>
     )
