@@ -1,6 +1,6 @@
 import React from 'react'
 
-// import { AddChannel } from '../assets'
+import { AddChannel } from '../assets'
 
 const TeamChannelList = ({ children, error=false, loading, type }) => {
     if(error) {
@@ -29,7 +29,7 @@ const TeamChannelList = ({ children, error=false, loading, type }) => {
                 <p className="team-channel-list__header__title">
                     {type === 'team' ? 'Channels' : 'Direct Message'}
                 </p>
-                {/* { Button - add channel } */}
+                <AddChannel />
             </div>
             {children}
         </div>
