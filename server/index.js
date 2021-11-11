@@ -1,21 +1,21 @@
-const express = require('express')
-const cors = require('cors')
+const express = require('express');
+const cors = require('cors');
 
-const authRoutes = require('./routes/auth.js')
+const authRoutes = require("./routes/auth.js");
 
-const app = express()
-const PORT = process.env.PORT || 5000
+const app = express();
+const PORT = process.env.PORT || 5000;
 
-require('dotenv').config()
+require('dotenv').config();
 
-app.use(cors())
-app.use(express.json())
-app.use(express.urlencoded())
-
-app.use('/auth', authRoutes)
+app.use(express.json());
+app.use(express.urlencoded());
+app.use(cors());
 
 app.get('/', (req, res) => {
-    res.send('Hello worlds')
-})
+    res.send('Hello, World!');
+});
 
-app.listen(PORT, () => console.log('Server running on port 5000'))
+app.use('/auth', authRoutes);
+
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
